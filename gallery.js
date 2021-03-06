@@ -29,4 +29,6 @@ if ($finalSection !== $gallerySection) {
 }
 
 window.gallery.observer.disconnect();
-lightGallery($gallery);
+lightGallery($gallery, {
+  thumbnail: true,
+});
