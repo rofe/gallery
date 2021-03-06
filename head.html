@@ -1,6 +1,27 @@
 <link rel="stylesheet" href="/styles.css"/>
-<link rel="stylesheet" href="/gallery.css"/>
+<link rel="stylesheet" href="/lightgallery.css">
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 <script src="/scripts.js" defer></script>
-<script src="/gallery.js" type="module"></script>
+<script src="js/lightgallery.min.js"></script>
+<script>
+  const observer = new MutationObserver(mutations => {
+  mutations.forEach(mutation => {
+    mutation.addedNodes.forEach(node => {
+      if (node.tagName === 'DIV') {
+        node.querySelectorAll('img').forEach(($pic) => {
+          if (!$pic.src) return;
+          $pic.setAttribute('data-src', $pic.getAttribute('src').split('?')[0]);
+          $pic.removeAttribute('src');
+          $pic.previousSibling.remove(); // remove source tag
+        });
+      }
+    });
+  });
+});
+
+observer.observe(document, {
+  childList: true,
+  subtree: true,
+});
+</script>
