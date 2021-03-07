@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="/styles.css"/>
 <link rel="stylesheet" href="/lightgallery.css">
+<link rel="stylesheet" href="/gallery.css"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 <script src="/scripts.js" defer></script>
@@ -14,7 +15,6 @@
         node.querySelectorAll('img').forEach(($pic) => {
           if (!$pic.src) return;
           $pic.setAttribute('src', `${$pic.getAttribute('src').split('?')[0]}??width=374&format=webply&optimize=medium`);
-          $pic.previousSibling.remove(); // remove source tag
         });
       }
     });

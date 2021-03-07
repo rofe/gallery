@@ -1,0 +1,12 @@
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+main div.gallery {
+ border: orange 2px solid; 
+}
+
+main div.epilog {
+  font-style: italic;
+  text-align: center;
+}
