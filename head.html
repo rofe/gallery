@@ -15,7 +15,6 @@
         node.querySelectorAll('img').forEach(($img) => {
           if (!$img.src) return;
           $img.setAttribute('src', `${$img.getAttribute('src').split('?')[0]}??width=374&format=webply&optimize=medium`);
-          console.log($img.src);
         });
       }
     });
