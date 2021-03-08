@@ -15,6 +15,9 @@ window.addEventListener('DOMContentLoaded', () => {
   const sections = Array.from(document.querySelectorAll('.section-wrapper'));
   const hasHeader = sections[0] && sections[0].classList.contains('hero');
   const $gallery = document.querySelector('.gallery');
+  if (!$gallery) {
+    return;
+  }
   const $gallerySection = $gallery.closest('.section-wrapper');
   $gallery.querySelectorAll('picture').forEach(($pic) => {
     const $img = $pic.querySelector('img');
