@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const $img = $pic.querySelector('img');
     const thumbUrl = $img.getAttribute('src');
     const fullUrl = thumbUrl.replace('width=374', 'width=2000');
-    const $thumb = link($img, fullUrl, 'jg-entry');
+    const $thumb = link($img, fullUrl, 'thumb');
     $pic.parentElement.appendChild($thumb);
     $pic.remove();
   });
@@ -38,6 +38,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   const $container = $gallery.querySelector('.gallery > div > div');
-  $container.classList.add('justified-gallery');
+  $container.classList.add('gallery-wall');
   lightGallery($container);
 });

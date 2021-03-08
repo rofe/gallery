@@ -2,9 +2,45 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-main div.gallery {
- border: orange 2px solid; 
+main>.section-wrapper.hero {
+  height: unset;
+  background-attachment: fixed;
 }
+
+main div.gallery {
+ border: orange 2px solid;
+ font-family: unset;
+}
+
+
+main div.gallery-wall {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  justify-items: flex-start;
+  gap: 20px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+main div.gallery .thumb {
+  width: calc(100% / 2 - 10px);
+  box-shadow: 0 0 5px black;
+  cursor: pointer;
+}
+
+main div.gallery .thumb:focus {
+  outline: var(--link-color) 2px;
+}
+
+.load-more:before {
+  content: 'Load more images';
+}
+
 
 main div.epilog {
   font-style: italic;
