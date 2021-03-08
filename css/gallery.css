@@ -1,3 +1,8 @@
+:root {
+  --border-color: 0,0,0;
+  --link-color: 3,95,230;
+}
+
 body {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -17,8 +22,6 @@ main div.gallery-wall {
   margin-bottom: 40px;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
-  justify-items: flex-start;
   gap: 20px;
 }
 
@@ -28,20 +31,29 @@ main div.gallery-wall {
 
 main div.gallery .thumb {
   width: 132px;
-  box-shadow: 0 0 5px black;
+  height: 88px;
+  border: 1px solid rgba(var(--border-color), 0.2);
+  border-radius: 5px;
   cursor: pointer;
 }
 
-main div.gallery .thumb:focus {
-  outline: var(--link-color) 2px;
+main div.gallery .thumb > img {
+  border-radius: 5px;
 }
 
-.load-more:before {
-  content: 'Load more images';
+.thumb:focus,
+.thumb:active {
+  outline: 2px solid rgb(var(--link-color));
 }
-
 
 main div.epilog {
   font-style: italic;
   text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+      --border-color: 255,255,255;
+      --link-color: 21,190,236;
+  }
 }
