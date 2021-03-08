@@ -1,6 +1,7 @@
-function link($elem, url) {
+function link($elem, href, cl) {
   const $link = createTag('a', {
-    'href': url,
+    href,
+    class: cl,
   });
   $elem.parentNode.insertBefore($link, $elem);
   $link.appendChild($elem);
@@ -19,7 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const $img = $pic.querySelector('img');
     const thumbUrl = $img.getAttribute('src');
     const fullUrl = thumbUrl.replace('width=374', 'width=2000');
-    const $thumb = link($img, fullUrl);
+    const $thumb = link($img, fullUrl, 'jg-entry');
     $pic.parentElement.appendChild($thumb);
     $pic.remove();
   });
@@ -33,7 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
     epilog.classList.add('epilog');
   }
 
-  // lightGaller($gallery, {
-  //   thumbnail: true,
-  // });
+  const $container = $gallery.querySelector('.gallery > div > div');
+  $container.classList.add('justified-gallery');
+  lightGallery($container);
 });
