@@ -46,7 +46,8 @@ main div.gallery .thumb > img {
   outline: 2px solid rgb(var(--link-color));
 }
 
-main div.epilog {
+main div.epilog,
+footer {
   font-style: italic;
   text-align: center;
 }
