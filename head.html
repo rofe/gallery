@@ -1,6 +1,28 @@
 <link rel="stylesheet" href="/styles.css"/>
-<link rel="stylesheet" href="/gallery.css"/>
+<link rel="stylesheet" href="/css/lightgallery.min.css"/>
+<link rel="stylesheet" href="/css/gallery.css"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 <script src="/scripts.js" defer></script>
-<script src="/gallery.js" type="module"></script>
+<script src="/js/lightgallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+<script>
+  window.gallery = {};
+  window.gallery.observer = new MutationObserver(mutations => {
+  mutations.forEach(mutation => {
+    mutation.addedNodes.forEach(node => {
+      if (node.tagName === 'DIV') {
+        node.querySelectorAll('img').forEach(($img) => {
+          if (!$img.src) return;
+          $img.setAttribute('src', `${$img.getAttribute('src').split('?')[0]}?width=264&crop=3:2&format=webply&optimize=medium`);
+        });
+      }
+    });
+  });
+});
+
+window.gallery.observer.observe(document, {
+  childList: true,
+  subtree: true,
+});
+</script>

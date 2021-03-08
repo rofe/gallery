@@ -1,0 +1,60 @@
+:root {
+  --border-color: 0,0,0;
+  --link-color: 3,95,230;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+main>.section-wrapper.hero {
+  height: unset;
+  background-attachment: fixed;
+}
+
+main div.gallery {
+ font-family: unset;
+}
+
+
+main div.gallery-wall {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 20px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+main div.gallery .thumb {
+  width: 132px;
+  height: 88px;
+  border: 1px solid rgba(var(--border-color), 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+main div.gallery .thumb > img {
+  border-radius: 5px;
+}
+
+.thumb:focus,
+.thumb:active {
+  outline: 2px solid rgb(var(--link-color));
+}
+
+main div.epilog,
+footer {
+  font-style: italic;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+      --border-color: 255,255,255;
+      --link-color: 21,190,236;
+  }
+}
