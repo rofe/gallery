@@ -14,7 +14,8 @@
       if (node.tagName === 'DIV') {
         node.querySelectorAll('img').forEach(($img) => {
           if (!$img.src) return;
-          $img.setAttribute('src', `${$img.getAttribute('src').split('?')[0]}??width=374&format=webply&optimize=medium`);
+          const w = window.innerWidth < 600 ? 336 : 484;
+          $img.setAttribute('src', `${$img.getAttribute('src').split('?')[0]}?width=${w}&crop=3:2&format=webply&optimize=medium`);
         });
       }
     });

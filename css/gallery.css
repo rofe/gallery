@@ -8,7 +8,6 @@ main>.section-wrapper.hero {
 }
 
 main div.gallery {
- border: orange 2px solid;
  font-family: unset;
 }
 
@@ -28,7 +27,7 @@ main div.gallery-wall {
 }
 
 main div.gallery .thumb {
-  width: calc(100% / 2 - 10px);
+  width: 132px;
   box-shadow: 0 0 5px black;
   cursor: pointer;
 }

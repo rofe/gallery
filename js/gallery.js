@@ -22,7 +22,9 @@ window.addEventListener('DOMContentLoaded', () => {
   $gallery.querySelectorAll('picture').forEach(($pic) => {
     const $img = $pic.querySelector('img');
     const thumbUrl = $img.getAttribute('src');
-    const fullUrl = thumbUrl.replace('width=374', 'width=2000');
+    const fullUrl = thumbUrl
+      .replace(/\?width\=\d+/, '?width=2000')
+      .replace(/\&crop\=\d+:\d+/,'');
     const $thumb = link($img, fullUrl, 'thumb');
     $pic.parentElement.appendChild($thumb);
     $pic.remove();
@@ -39,5 +41,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const $container = $gallery.querySelector('.gallery > div > div');
   $container.classList.add('gallery-wall');
-  lightGallery($container);
+  lightGallery($container, {
+    thumbnail: true,
+  });
 });
+
+window.addEventListener('resize', () => {
+
+})
