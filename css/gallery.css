@@ -23,7 +23,7 @@ main div.gallery-wall {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  gap: 20px;
+  column-gap: 20px;
 }
 
 .hidden {
@@ -36,6 +36,7 @@ main div.gallery .thumb {
   border: 1px solid rgba(var(--border-color), 0.2);
   border-radius: 5px;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 main div.gallery .thumb > img {
