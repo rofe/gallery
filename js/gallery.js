@@ -44,8 +44,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // find wall div and initialize lightgallery
   const $wall = $gallery.querySelector('.gallery > div > div');
+  // remove everything but links from wall div
+  $wall.querySelectorAll('a').forEach(($a) => $wall.append($a));
+  $wall.querySelectorAll(':scope > *:not(a)').forEach(($el) => $el.remove());
+
   $wall.classList.add('gallery-wall');
   lightGallery($wall, {
     thumbnail: true,
   });
 });
+
+if (document.head.querySelector('meta[name="template"]')) {
+  document.documentElement.classList.add(document.head.querySelector('meta[name="template"]').content);
+}
