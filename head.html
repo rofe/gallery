@@ -11,7 +11,7 @@
   window.gallery.observer = new MutationObserver(mutations => {
   mutations.forEach(mutation => {
     mutation.addedNodes.forEach(node => {
-      if (node.tagName === 'DIV') {
+      if (node.tagName === 'DIV' && node.classname === "gallery") {
         node.querySelectorAll('img').forEach(($img) => {
           if (!$img.src) return;
           $img.setAttribute('src', `${$img.getAttribute('src').split('?')[0]}?width=264&crop=3:2&format=webply&optimize=medium`);
