@@ -22,7 +22,6 @@ main div.gallery-wall {
   margin-bottom: 40px;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
   column-gap: 20px;
 }
 
